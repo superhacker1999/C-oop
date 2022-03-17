@@ -9,11 +9,11 @@ class Number {
     char oper;
 
     public:
-     float GetX() {
+     float GetX() { // getting x value
         return x;
     }
 
-    void SetX(float valueX) {
+    void SetX(float valueX) { // setting x value
         x = valueX;
     }
 
@@ -33,7 +33,7 @@ class Number {
         oper = operation;
     }
 
-    float Plus (float a, float b) {
+    float Plus (float a, float b) { 
         return a + b;
     }
 
@@ -50,7 +50,7 @@ class Number {
     }
 
     float StartOperation () {
-        if (GetOperation() == '+') {
+        if (GetOperation() == '+') { // better to use switch case
             return Plus(x, y);
         } else if (GetOperation() == '-') {
             return Minus(x, y);
@@ -64,8 +64,13 @@ class Number {
     }
 
     void Print () {
+        if (StartOperation() == 0) {
+            cout << "Вы ввели неверную операцию" << endl;
+        } else {
         cout << GetX() << " " << GetOperation() << " " << GetY() << " " << "= " << StartOperation() << "\n";
+        }
     }
+    
 
 };
 
